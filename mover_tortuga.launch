@@ -1,0 +1,15 @@
+<launch>
+  <arg name="vel" default="0.5"/>
+  <arg name="dis" default="0.8"/>
+  
+  <!-- Simulador tortuga -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" />
+  
+  <!-- Nodo mover tortuga -->
+  <node pkg="laboratorio_ros" type="mover" name="mover_lineal" output="screen">
+    <param name="vel" value="$(arg vel)"/>
+    <param name="dis" value="$(arg dis)"/>
+  </node>
+  
+  
+</launch>
