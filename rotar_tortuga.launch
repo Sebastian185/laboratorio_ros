@@ -1,0 +1,13 @@
+<launch>
+  <arg name="vel" default="0.4"/>
+  <arg name="dis" default="1.45"/>
+  
+  <!-- Simulacor tortuga -->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" />
+  
+  <!-- Nodo mover tortuga -->
+  <node pkg="laboratorio_ros" type="rotar" name="rotar" output="screen">
+    <param name="vel" value="$(arg vel)"/>
+    <param name="dis" value="$(arg dis)"/>
+  </node>
+</launch>
